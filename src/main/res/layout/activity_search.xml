@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_search"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.sekhon.jason.photogallery.myapplication.SearchActivity">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Photogallery Application"
+        android:id="@+id/title_search"
+        android:textSize="30sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <EditText
+        android:id="@+id/search_fromDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:hint="YYYY/MM/DD"
+        android:inputType="date"
+        app:layout_constraintTop_toBottomOf="@+id/title_search"
+        app:layout_constraintEnd_toEndOf="@+id/title_search"
+        app:layout_constraintRight_toRightOf="@+id/title_search" />
+
+    <TextView
+        android:id="@+id/search_fromDateLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="14dp"
+        android:text="From Date: "
+        app:layout_constraintTop_toTopOf="@+id/search_fromDate"
+        app:layout_constraintStart_toStartOf="@+id/title_search"
+        app:layout_constraintBottom_toBottomOf="@+id/search_fromDate"
+        app:layout_constraintEnd_toStartOf="@+id/search_fromDate"
+        app:layout_constraintLeft_toLeftOf="@+id/title_search" />
+
+    <EditText
+        android:id="@+id/search_toDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="YYYY/MM/DD"
+        android:inputType="date"
+        app:layout_constraintTop_toBottomOf="@+id/search_fromDate"
+        app:layout_constraintEnd_toEndOf="@+id/search_fromDate"
+        app:layout_constraintRight_toRightOf="@+id/search_fromDate" />
+
+    <TextView
+        android:id="@+id/search_toDateLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginBottom="13dp"
+        android:text="To Date: "
+        app:layout_constraintTop_toTopOf="@+id/search_toDate"
+        app:layout_constraintBottom_toBottomOf="@+id/search_toDate"
+        app:layout_constraintEnd_toStartOf="@+id/search_toDate"
+        app:layout_constraintLeft_toLeftOf="@+id/search_fromDateLabel" />
+
+    <Button
+        android:id="@+id/search_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="8dp"
+        android:onClick="cancel"
+        android:text="Cancel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/minLatLabel" />
+
+    <Button
+        android:id="@+id/search_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="8dp"
+        android:onClick="search"
+        android:text="Search"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/maxLon" />
+
+    <EditText
+        android:id="@+id/minLat"
+        android:layout_width="103dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="min"
+        android:inputType="number|numberSigned|numberDecimal"
+        app:layout_constraintStart_toStartOf="@+id/search_fromDate"
+        app:layout_constraintTop_toBottomOf="@+id/search_toDate" />
+
+    <EditText
+        android:id="@+id/maxLat"
+        android:layout_width="103dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="max"
+        android:inputType="number|numberSigned|numberDecimal"
+        app:layout_constraintStart_toStartOf="@+id/search_fromDate"
+        app:layout_constraintTop_toBottomOf="@+id/search_toDate" />
+
+    <TextView
+        android:id="@+id/minLatLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="14dp"
+        android:text="Latitude: "
+        app:layout_constraintTop_toTopOf="@+id/minLat"
+        app:layout_constraintStart_toStartOf="@+id/search_toDateLabel"
+        app:layout_constraintBottom_toBottomOf="@+id/minLat"
+        app:layout_constraintEnd_toStartOf="@+id/minLat" />
+
+    <TextView
+        android:id="@+id/minLonLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="44dp"
+        android:layout_marginBottom="15dp"
+        android:text="Longitude:"
+        app:layout_constraintTop_toTopOf="@+id/minLon"
+        app:layout_constraintStart_toStartOf="@+id/title_search"
+        app:layout_constraintBottom_toBottomOf="@+id/minLon"
+        app:layout_constraintEnd_toStartOf="@+id/minLat" />
+
+    <EditText
+        android:id="@+id/minLon"
+        android:layout_width="103dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="min"
+        android:inputType="number|numberSigned|numberDecimal"
+        app:layout_constraintStart_toStartOf="@+id/search_fromDate"
+        app:layout_constraintTop_toBottomOf="@+id/minLat" />
+
+    <EditText
+        android:id="@+id/maxLon"
+        android:layout_width="103dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="max"
+        android:inputType="number|numberSigned|numberDecimal"
+        app:layout_constraintStart_toStartOf="@+id/search_fromDate"
+        app:layout_constraintTop_toBottomOf="@+id/maxLat" />
+
+    <TextView
+        android:id="@+id/captionLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="14dp"
+        android:text="Caption:"
+        app:layout_constraintBottom_toBottomOf="@+id/caption"
+        app:layout_constraintEnd_toStartOf="@+id/caption"
+        app:layout_constraintHorizontal_bias="0.022"
+        app:layout_constraintStart_toStartOf="@+id/minLonLabel"
+        app:layout_constraintTop_toTopOf="@+id/caption"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <EditText
+        android:id="@+id/caption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="6dp"
+        android:ems="10"
+        android:hint="Caption"
+        android:inputType="text|textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/title_search"
+        app:layout_constraintStart_toStartOf="@+id/minLon"
+        app:layout_constraintTop_toBottomOf="@+id/minLon" />
+
+</android.support.constraint.ConstraintLayout>
